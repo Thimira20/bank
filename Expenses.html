@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>PiggyBank | Expenses</title>
+
+    <link rel="stylesheet" href="Income.css" />
+    <script src="Expenses.js"></script>
+  </head>
+
+  <body>
+    <ul id="Top1">
+      <li class="Top2">
+        <a id="Home" href="Index.html"><img id="Logo2" src="PiggyBank.png" /></a>
+      </li>
+      <li class="Top2"><a id="PigText" href="Index.html">PiggyBank</a></li>
+    </ul>
+
+    <ul id="Nav">
+      <li class="Nav2"><a href="Dashboard.html">Dashboard</a></li>
+      <li class="Nav2"><a href="Income.html">Income</a></li>
+      <li class="Nav2"><a id="Dashboard" href="Expenses.html">Expenses</a></li>
+      <li class="Nav2"><a href="Reports.html">Reports</a></li>
+      <li class="Nav2"><a href="Login.html">Log out</a></li>
+    </ul>
+    <br />
+
+    <h1 id="Head1">Expenses</h1>
+
+    <div class="AddIncome2">
+      <a href="#" class="AddIncome1" onclick="addExpense()"
+        >+ Add to Expenses</a
+      >
+    </div>
+
+    <div class="OverBox" id="OverIncome">
+      <h class="Head1"
+        >Expenses Summary &nbsp;&nbsp;<a class="tooltip"
+          >ⓘ
+          <div class="tooltiptext">
+            This is a summary of this month's expenses only
+          </div></a
+        ></h
+      ><br />
+      <h id="expenseSummary" class="Bal1"
+        >$<span id="expenseSummary">0.00</span></h
+      >
+    </div>
+    <br /><br /><br />
+
+    <div class="Column1">
+      <div class="TableHead1" id="Table1">
+        <table id="expenseTable">
+          <thead>
+            <tr>
+              <th class="TrHead">Date</th>
+              <th class="TrHead">Description</th>
+              <th class="TrHead">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="expenseList"></tbody>
+        </table>
+      </div>
+      <br /><br />
+
+      <div class="TableHead1" id="FormBox1">
+        Add new
+        <br /><br />
+
+        <form id="expenseForm">
+          <label for="ExpenseDate" class="Qs">Date</label><br />
+          <input
+            type="date"
+            class="As"
+            id="Edate1"
+            name="ExpenseDate"
+            required
+          /><br />
+
+          <label for="ExpenseReason" class="Qs">Expense Reason</label><br />
+          <input
+            type="text"
+            class="As"
+            id="reason1"
+            name="ExpenseReason"
+            placeholder="Add a small description"
+            required
+          /><br />
+
+          <label for="ExpenseAmount" class="Qs">Amount ($)</label><br />
+          <input
+            type="number"
+            class="As"
+            id="EAmount1"
+            name="ExpenseAmount"
+            required
+          /><br /><br />
+
+          <button class="SaveData" onclick="addExpense()">Save</button>
+          <button class="ResetData" onclick="resetExpenses()">Reset</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Load existing expense data from localStorage when the page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        loadExpenseData();
+      });
+
+      function addExpense() {
+        const expenseReason = document.getElementById("reason1").value;
+        const expenseDate = document.getElementById("Edate1").value;
+        const expenseAmount = parseFloat(
+          document.getElementById("EAmount1").value
+        );
+
+        if (isNaN(expenseAmount)) {
+          alert("Please enter a valid amount.");
+          return;
+        }
+
+        const table = document.getElementById("expenseTable");
+        const newRow = table.insertRow(-1);
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+
+        cell1.textContent = expenseDate;
+        cell2.textContent = expenseReason;
+        cell3.textContent = "$" + expenseAmount.toFixed(2);
+
+        updateExpenseSummary(expenseAmount);
+        saveExpenseData(expenseReason, expenseDate, expenseAmount);
+        document.getElementById("expenseForm").reset(); // Reset the form
+      }
+
+      function updateExpenseSummary(amount) {
+        const expenseSummaryElement = document.getElementById("expenseSummary");
+        const currentAmount = parseFloat(
+          expenseSummaryElement.textContent.replace("$", "")
+        );
+        const newAmount = currentAmount + amount;
+        expenseSummaryElement.textContent = "$" + newAmount.toFixed(2);
+        localStorage.setItem("expense", newAmount);
+      }
+
+      function saveExpenseData(reason, date, amount) {
+        // Get existing data from localStorage or initialize an empty array
+        const existingData =
+          JSON.parse(localStorage.getItem("expenseData")) || [];
+
+        // Add the new expense data
+        existingData.push({ reason, date, amount });
+
+        // Save the updated data back to localStorage
+        localStorage.setItem("expenseData", JSON.stringify(existingData));
+      }
+
+      function loadExpenseData() {
+        // Load existing expense data from localStorage
+        const existingData =
+          JSON.parse(localStorage.getItem("expenseData")) || [];
+
+        // Populate the table with existing data
+        const table = document.getElementById("expenseTable");
+        existingData.forEach((item) => {
+          const newRow = table.insertRow(-1);
+          const cell1 = newRow.insertCell(0);
+          const cell2 = newRow.insertCell(1);
+          const cell3 = newRow.insertCell(2);
+
+          cell1.textContent = item.date;
+          cell2.textContent = item.reason;
+          cell3.textContent = "$" + item.amount.toFixed(2);
+
+          updateExpenseSummary(item.amount);
+        });
+      }
+      function resetExpenses() {
+        // Clear the saved income data from localStorage
+        localStorage.removeItem("expenseData");
+        localStorage.removeItem("expense");
+
+        // Reset the displayed table and summary
+        const table = document.getElementById("expenseTable");
+        const summaryElement = document.getElementById("expenseSummary");
+
+        // Clear the table
+        table.innerHTML =
+          '<thead><tr><th class="TrHead">Date</th><th class="TrHead">Description</th><th class="TrHead">Amount</th></tr></thead><tbody id="incomeList"></tbody>';
+
+        // Reset the summary
+        summaryElement.textContent = "$0.00";
+      }
+    </script>
+  </body>
+</html>

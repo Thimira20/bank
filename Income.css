@@ -1,0 +1,358 @@
+* {
+  color: rgb(161, 61, 255);
+  font-family: Montserrat, sans-serif;
+  body {
+    background-image: linear-gradient(rgb(52, 0, 100), blueviolet, blueviolet);
+  }
+  #PigText {
+    font-family: Montserrat ExtraBold;
+    font-size: 32px;
+    color: white;
+  }
+  .Top2 {
+    float: left;
+  }
+  .Top2 a {
+    display: block;
+    color: blueviolet;
+    text-align: center;
+    font-family: Montserrat SemiBold;
+    padding: 0px 0px;
+    text-decoration: none;
+  }
+  #Nav {
+    list-style-type: none;
+    margin: 20px;
+    width: calc(100% - 80px);
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 50px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 5px rgb(94, 0, 182);
+    position: sticky;
+    top: 0;
+  }
+  .Nav2 {
+    float: left;
+    background-image: linear-gradient(white, white, white);
+  }
+  .Nav2 a {
+    display: block;
+    color: blueviolet;
+    text-align: center;
+    font-family: Montserrat SemiBold;
+    padding: 5px 16px;
+    text-decoration: none;
+    border-radius: 50px;
+  }
+  .Nav2 a:hover {
+    background-image: linear-gradient(blueviolet, rgb(52, 0, 100), blueviolet);
+    color: white;
+    padding: 5px 16px;
+    transition: background-image 0.2s, color 0.2s;
+  }
+  .Nav2 a:not(:hover) {
+    background-image: linear-gradient(white, white, white);
+    color: blueviolet;
+    padding: 5px 16px;
+    transition: background-image 0.2s, color 0.2s;
+  }
+  #Dashboard {
+    background-image: linear-gradient(blueviolet, blueviolet, blueviolet);
+    border-radius: 50px;
+    color: white;
+  }
+  #Logo2 {
+    width: 50px;
+  }
+  #Head1 {
+    color: white;
+    font-family: Montserrat ExtraBold;
+    font-size: 60px;
+    margin: 20px;
+  }
+  .AddIncome1 {
+    background-color: white;
+    color: rgb(52, 0, 100);
+    padding: 10px 15px;
+    margin: 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-style: bold;
+    font-family: Montserrat ExtraBold;
+    border-radius: 50px;
+    width: 200px;
+    animation-name: Anim1;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+  }
+  .AddIncome1:hover {
+    background-color: rgb(52, 0, 100);
+    color: white;
+    box-shadow: 0px 0px 0px 3px white;
+  }
+  .OverBox {
+    background-color: white;
+    border: none;
+    padding: 20px 15px;
+    width: calc(100% - 100px);
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 30px;
+    text-align: left;
+    margin: 0px 20px;
+    box-shadow: 0px 0px 5px 5px rgb(94, 0, 182);
+  }
+  .OverBox:hover {
+    background-image: linear-gradient(white, white, rgb(233, 209, 255));
+    color: white;
+    padding: 25px 15px;
+    transition: padding 0.2s;
+  }
+  .OverBox:not(:hover) {
+    background-image: linear-gradient(white, white, white);
+    color: white;
+    padding: 20px 15px;
+    transition: padding 0.2s;
+  }
+  #OverBox2 {
+    padding: 40px 15px;
+    font-size: 72px;
+  }
+  .Bal1 {
+    font-family: Montserrat ExtraBold;
+    font-size: 60px;
+    color: rgb(52, 0, 100);
+  }
+  .Head1 {
+    font-family: Montserrat ExtraBold;
+    color: grey;
+  }
+  .LineSpace {
+    margin-right: 20px;
+  }
+  .bal:hover {
+    background-image: linear-gradient(white, white, rgb(188, 255, 188));
+    color: green;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+  .Tr1 {
+    padding: 1px 15px;
+    height: max-content;
+  }
+  .Tr1:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  .Tr1:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .Tr1:hover {
+    background-color: rgb(230, 203, 255);
+    font-size: 18px;
+    transition: background-color 0.2s, font-size 0.2s;
+  }
+  .Tr1:nth-child(odd):not(:hover) {
+    background-color: #ffffff;
+    font-size: 16px;
+    transition: background-color 0.2s, font-size 0.2s;
+  }
+  .Tr1:nth-child(even):not(:hover) {
+    background-color: #f2f2f2;
+    font-size: 16px;
+    transition: background-color 0.2s, font-size 0.2s;
+  }
+  .TrHead {
+    font-size: 24px;
+    color: white;
+  }
+  .TableHead1 {
+    background-image: linear-gradient(
+      rgb(52, 0, 100),
+      rgb(52, 0, 100),
+      rgb(52, 0, 100)
+    );
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-style: bold;
+    font-family: Montserrat ExtraBold;
+    border-radius: 20px;
+  }
+  td {
+    font-family: Montserrat SemiBold;
+  }
+  .td1 {
+    border-radius: 15px 0px 0px 15px;
+    width: 300px;
+  }
+  .td2 {
+    width: 150px;
+  }
+  .td3 {
+    border-radius: 0px 15px 15px 0px;
+  }
+  .TrHead1 {
+    width: 300px;
+  }
+  .TrHead1 {
+    width: 150px;
+  }
+  .Qs {
+    color: white;
+    font-family: Montserrat SemiBold;
+    font-size: 16px;
+    padding: 2px 5px;
+  }
+  .As {
+    width: 95%;
+    font-size: 16px;
+    border: 0px;
+    border-radius: 20px;
+    padding: 3px 5px;
+    font-family: Montserrat SemiBold;
+  }
+  .As:hover {
+    width: 97%;
+    padding: 7px 5px;
+    transition: width 0.2s, padding 0.2s;
+  }
+  .As:not(:hover) {
+    width: 95%;
+    padding: 3px 5px;
+    transition: width 0.2s, padding 0.2s;
+  }
+  /*input[type=text] {
+        transition: width 1s;
+      }*/
+  #FormBox1 {
+    margin: 20px;
+    font-size: 24px;
+    flex: 1;
+  }
+  #Table1 {
+    margin: 20px;
+    flex: 2;
+  }
+  .SaveData {
+    background-image: linear-gradient(white, white, white);
+    border: 0px;
+    border-radius: 20px;
+    font-family: Montserrat ExtraBold;
+    font-size: 20px;
+    padding: 3px 15px;
+    color: blueviolet;
+    box-shadow: 0px 0px 5px 5px rgb(94, 0, 189);
+  }
+  .SaveData:hover {
+    background-image: linear-gradient(blueviolet, rgb(52, 0, 100), blueviolet);
+    color: white;
+    box-shadow: 0px 0px 5px 2px white;
+    padding: 3px 20px;
+    transition: color 0.2s, padding 0.2s, box-shadow 0.2s, background-image 0.2s;
+  }
+  .SaveData:not(:hover) {
+    background-image: linear-gradient(white, white, white);
+    color: blueviolet;
+    box-shadow: 0px 0px 5px 0px rgb(94, 0, 189);
+    padding: 3px 15px;
+    transition: color 0.2s, padding 0.2s, box-shadow 0.2s, background-image 0.2s;
+  }
+  .ResetData {
+    background-image: linear-gradient(white, white, white);
+    border: 0px;
+    border-radius: 20px;
+    font-family: Montserrat ExtraBold;
+    font-size: 20px;
+    padding: 3px 15px;
+    color: blueviolet;
+    box-shadow: 0px 0px 5px 5px rgb(94, 0, 189);
+  }
+  .ResetData:hover {
+    background-image: linear-gradient(blueviolet, rgb(52, 0, 100), blueviolet);
+    color: white;
+    box-shadow: 0px 0px 5px 2px rgb(188, 22, 22);
+    padding: 3px 20px;
+    transition: color 0.2s, padding 0.2s, box-shadow 0.2s, background-image 0.2s;
+  }
+  .ResetData:not(:hover) {
+    background-image: linear-gradient(white, white, white);
+    color: blueviolet;
+    box-shadow: 0px 0px 5px 0px rgb(94, 0, 189);
+    padding: 3px 15px;
+    transition: color 0.2s, padding 0.2s, box-shadow 0.2s, background-image 0.2s;
+  }
+  .Column1 {
+    display: flex;
+    width: calc(100% - 30px);
+  }
+  .TableHead1:hover {
+    background-image: linear-gradient(
+      rgb(25, 0, 50),
+      rgb(52, 0, 100),
+      rgb(25, 0, 50)
+    );
+    box-shadow: 0px 0px 0px 5px white;
+    transition: background-image 0.2s, box-shadow 0.2s;
+  }
+  .TableHead1:not(:hover) {
+    background-image: linear-gradient(
+      rgb(52, 0, 100),
+      rgb(52, 0, 100),
+      rgb(52, 0, 100)
+    );
+    box-shadow: 0px 0px 0px 0px white;
+    transition: background-image 0.2s, box-shadow 0.2s;
+  }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  .tooltip .tooltiptext {
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    visibility: hidden;
+    opacity: 0;
+    width: 450px;
+    height: 20px;
+    background-color: rgba(221, 221, 221, 0.568);
+    color: rgb(52, 0, 100);
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.534);
+    transition: visibility 0.3s, opacity 0.3s;
+    position: absolute;
+    z-index: 1;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  @keyframes Anim1 {
+    0% {
+      background-color: white;
+    }
+    50% {
+      background-color: blueviolet;
+    }
+    100% {
+      background-color: purple;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        PiggyBank | Income
+    </title>
+
+    <link rel="stylesheet" href="Income.css">
+    <script src="Income.js"></script>
+</head>
+
+<body>
+    <ul id="Top1">
+        <li class="Top2">
+            <a id="Home" href="Index.html"><img id="Logo2" src="PiggyBank.png"></a>
+        </li>
+        <liclass="Top2"><a id="PigText" href="Index.html">PiggyBank</a></li>
+    </ul>
+
+    <ul id="Nav">
+        <li class="Nav2"><a href="Dashboard.html">Dashboard</a></li>
+        <li class="Nav2"><a id="Dashboard" href="Income.html">Income</a></li>
+        <li class="Nav2"><a href="Expenses.html">Expenses</a></li>
+        <li class="Nav2"><a href="Reports.html">Reports</a></li>
+        <li class="Nav2"><a href="Login.html">Log out</a></li>
+    </ul>
+    <br>
+
+    <h1 id="Head1">Income</h1>
+
+    <div class="AddIncome2"><a href="#" class="AddIncome1" onclick="addIncome()">+ Add to Income</a></div>
+
+    <div class="OverBox" id="OverIncome">
+        <h class="Head1">Income Summery &nbsp;&nbsp;<a class="tooltip">ⓘ<div class="tooltiptext">This is a summery of this month's income only</div></a></h><br>
+        <h id="incomeSummary" class="Bal1">$<span id="incomeSummary">0.00</span></h>
+    </div><br><br><br>
+
+
+    <div class="Column1">
+        <div class="TableHead1" id="Table1">
+            <table id="incomeTable">
+                <thead>
+                    <tr>
+                        <th class="TrHead">Description</th>
+                        <th class="TrHead">Date</th>
+                        <th class="TrHead">Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="incomeList"></tbody>
+            </table>
+        </div><br><br>
+
+        <div class="TableHead1" id="FormBox1">
+            Add new
+            <br><br>
+
+            <form id="incomeForm">
+                <label for="IncomeDate" class="Qs">Date</label><br>
+                <input type="date" class="As" id="Idate1" name="IncomeDate" required><br>
+
+                <label for="IncomeSource" class="Qs">Income Source</label><br>
+                <input type="text" class="As" id="source1" name="IncomeSource" placeholder="Add a small description" required><br>
+
+                <label for="IncomeAmount" class="Qs">Amount ($)</label><br>
+                <input type="number" class="As" id="IAmount1" name="IncomeAmount" required><br><br>
+                <button class="SaveData" onclick="addIncome()">Save</button>
+                <button class="ResetData" onclick="resetIncome()">Reset</button>
+            </form>
+
+        </div>
+    </div>
+    <script>
+    </script>
+
+
+</body>
+
+</html>

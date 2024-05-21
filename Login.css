@@ -1,0 +1,211 @@
+* {
+    color: rgb(161, 61, 255);
+    font-family: Montserrat, sans-serif;
+
+    body {
+        background-color: blueviolet;
+        background-image: url('Back1.jpeg');
+        backdrop-filter: blur(5px);
+        background-blend-mode: multiply;
+        background-attachment: fixed;
+    }
+
+    #PigText {
+        font-family: Montserrat ExtraBold;
+        font-size: 32px;
+        color: white;
+    }
+
+    .Top2 {
+        float: left;
+    }
+      
+    .Top2 a {
+        display: block;
+        color: blueviolet;
+        text-align: center;
+        font-family: Montserrat SemiBold;
+        padding: 0px 0px;
+        text-decoration: none;
+    }
+
+    #Logo2 {
+        width: 50px;
+    }
+
+    .About {
+        background-color: lightgray;
+        border: 0px;
+        padding: 10px 10px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50px;
+        width: 400px;
+
+        font-size: 16px;
+        color: white;
+        font-family: Montserrat SemiBold;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.308);
+        box-shadow: 0px 0px 15px 0px rgb(58, 0, 112);
+        backdrop-filter: blur(3px);
+      }
+
+    .Abouthead {
+        color: rgb(255, 255, 255);
+        font-size: 32px;
+    }
+
+    .Qs {
+        color: white;
+        font-family: Montserrat SemiBold;
+        font-size: 16px;
+        padding: 2px 5px;
+    }
+
+    .As {
+      width: 95%;
+      font-size: 16px;
+      border: 0px;
+      border-radius: 20px;
+      padding: 5px 5px;
+      font-family: Montserrat SemiBold;
+    }
+
+    .About:hover {
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.705);
+        background-color: rgba(255, 255, 255, 0.356);
+
+        transition: box-shadow 0.2s;
+      }
+  
+      .About:not(:hover) {
+        box-shadow: 0px 0px 0px 0px rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.308);
+
+        transition: box-shadow 0.2s;
+      }
+
+    .As:hover {
+      width: 97%;
+      padding: 5px 5px;
+
+      transition: width 0.2s, padding 0.2s;
+    }
+
+    .As:not(:hover) {
+      width: 95%;
+      padding: 5px 5px;
+
+      transition: width 0.2s, padding 0.2s;
+    }
+
+    /*input[type=text] {
+        transition: width 1s;
+      }*/
+
+    #FormBox1 {
+      margin: 20px;
+      font-size: 24px;
+      flex: 1;
+    }
+
+    #Table1 {
+      margin: 20px;
+      flex: 2;
+    }
+
+    .SaveData {
+      background-image: linear-gradient(white, white, white);
+      border: 0px;
+      border-radius: 20px;
+      font-family: Montserrat ExtraBold;
+      font-size: 20px;
+      padding: 3px 15px;
+      color: blueviolet;
+    }
+
+    .SaveData:hover {
+      background-image: linear-gradient(blueviolet, rgb(52, 0, 100), blueviolet);
+      color: white;
+      padding: 3px 20px;
+
+      transition: color 0.2s, padding 0.2s, background-image 0.2s;
+    }
+
+    .SaveData:not(:hover) {
+      background-image: linear-gradient(white, white, white);
+      color: blueviolet;
+      box-shadow: 0px 0px 5px 0px rgb(94, 0, 189);
+      padding: 3px 15px;
+
+      transition: color 0.2s, padding 0.2s, background-image 0.2s;
+    }
+
+  .Column1 {
+    display: flex;
+    width: calc(100% - 30px);
+  }
+
+  .TableHead1:hover {
+    background-image: linear-gradient(rgb(25, 0, 50), rgb(52, 0, 100), rgb(25, 0, 50));
+    box-shadow: 0px 0px 0px 5px white;
+
+    transition: background-image 0.2s, box-shadow 0.2s;
+  }
+
+  .TableHead1:not(:hover) {
+    background-image: linear-gradient(rgb(52, 0, 100), rgb(52, 0, 100), rgb(52, 0, 100));
+    box-shadow: 0px 0px 0px 0px white;
+
+    transition: background-image 0.2s, box-shadow 0.2s;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    visibility: hidden;
+    opacity: 0;
+    width: 450px;
+    height: 20px;
+    background-color: rgba(221, 221, 221, 0.568);
+    color: rgb(52, 0, 100);
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.534);
+    transition: visibility 0.3s, opacity 0.3s;
+  
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #CreateOne {
+    color: white;
+  }
+
+  #HomeButton {
+    position: sticky;
+    top: 0;
+    margin-left: calc(100% - 400px);
+    z-index: 10;
+  }
+
+
+
+
+
+}

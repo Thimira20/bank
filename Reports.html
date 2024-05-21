@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        PiggyBank | Reports
+    </title>
+
+    <link rel="stylesheet" href="Reports.css">
+
+</head>
+
+<body>
+
+    <ul id="Top1">
+        <li class="Top2">
+            <a id="Home" href="Index.html"><img id="Logo2" src="PiggyBank.png"></a>
+        </li>
+        <liclass="Top2"><a id="PigText" href="Index.html">PiggyBank</a></li>
+    </ul>
+
+    <ul id="Nav">
+        <li class="Nav2"><a href="Dashboard.html">Dashboard</a></li>
+        <li class="Nav2"><a href="Income.html">Income</a></li>
+        <li class="Nav2"><a href="Expenses.html">Expenses</a></li>
+        <li class="Nav2"><a id="Dashboard" href="Reports.html">Reports</a></li>
+        <li class="Nav2"><a href="Login.html">Log out</a></li>
+    </ul>
+    <br><br>
+
+    <h id="Head1">Reports</h>
+    <br><br>
+
+    <p id="TopDescr">
+        This page shows you an overview of your income, expenses, and reports for your PiggyBank account. You can see how much money you have earned and spent in the current month, as well as access detailed reports on your financial activities and trends. You
+        can also navigate to other pages of the website by clicking on the links below each section. This page helps you keep track of your money and plan your budget effectively.
+    </p>
+
+    <div class="OverBox" id="OverviewBox1">
+        <h class="Head1">Monthly Report &nbsp;&nbsp;<a class="tooltip">ⓘ<div class="tooltiptext">This report is based on this month's income and expenses only</div></a></h><br>
+        <p class="OverDesc" id="Overdesc1">Your this month's total income is $<span id="displayIncomeSummary">0.00</span>.</p>
+        <p class="OverDesc" id="Overdesc1">Your this month's total expense is $<span id="displayExpenseSummary">0.00</span>.</p>
+        <p class="OverDesc" id="Overdesc1">Therefore, you have a balance of $<span id="finnacialSummary">0.00</span> for this month.</p>
+    </div><br>
+
+    <div class="OverBox" id="piechart">
+    </div>
+
+    <div class="InOut">
+        <div class="OverBox" id="OverIncome">
+            <h class="Head1">Tips to Reduce Expenses</h><br>
+            <p>
+                <p class="Tips1">Budgeting:</p>
+                <p class="Tips2">
+                    Keep track of your spending. This can help you identify areas where you can cut back.
+                </p>
+                <p class="Tips1">Avoid Unnecessary Expenses:</p>
+                <p class="Tips2">
+                    Try to limit spending on non-essential items. This could include dining out, entertainment, and luxury goods.
+                </p>
+            </p>
+        </div><br><br>
+
+
+        <div class="OverBox" id="OverExpenses">
+            <h class="Head1">Remember</h><br>
+            <p class="Tips2">
+                It's important to balance increasing income and decreasing expenses to achieve financial stability.
+            </p>
+        </div>
+    </div>
+    <script>
+        // Function to initialize values to zero
+        function initializeValues() {
+            localStorage.setItem('income', '0.00');
+            localStorage.setItem('expense', '0.00');
+            updateDisplayedValues();
+        }
+
+        // Function to update displayed values
+        function updateDisplayedValues() {
+            var incomeDisplayed = document.getElementById('displayIncomeSummary');
+            incomeDisplayed.textContent = localStorage.getItem('income') || '0.00';
+
+            var expenseDisplayed = document.getElementById('displayExpenseSummary');
+            expenseDisplayed.textContent = localStorage.getItem('expense') || '0.00';
+
+            var financialSummary = document.getElementById('finnacialSummary');
+            financialSummary.textContent = JSON.stringify(
+                parseFloat(incomeDisplayed.textContent) - parseFloat(expenseDisplayed.textContent)
+            );
+        }
+
+        // Check if values are already initialized, if not, initialize them
+        if (localStorage.getItem('income') === null && localStorage.getItem('expense') === null) {
+            initializeValues();
+        } else {
+            // Update displayed values if values are already present in localStorage
+            updateDisplayedValues();
+        }
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var incomeDisplayed = document.getElementById('displayIncomeSummary');
+            incomeDisplayed.textContent = localStorage.getItem('income') || '0.00';
+
+            var expenseDisplayed = document.getElementById('displayExpenseSummary');
+            expenseDisplayed.textContent = localStorage.getItem('expense') || '0.00';
+
+            var financialSummary = document.getElementById('finnacialSummary');
+            financialSummary.textContent = JSON.stringify(
+                parseFloat(incomeDisplayed.textContent) + parseFloat(expenseDisplayed.textContent)
+            );
+
+            var data = google.visualization.arrayToDataTable([
+                ['Type', 'Amount'],
+                ['Income', (incomeDisplayed.textContent / financialSummary.textContent) * 100],
+                ['Expenses', (expenseDisplayed.textContent / financialSummary.textContent) * 100]
+            ]);
+
+            var options = {
+                'title': 'Summary of this month (based on uploaded data)',
+                'width': 600,
+                'height': 300
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

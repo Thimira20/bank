@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        PiggyBank | Login
+    </title>
+
+    <link rel="stylesheet" href="Login.css">
+    <script src="Income.js"></script>
+</head>
+
+<body>
+    <ul id="Top1">
+        <li class="Top2">
+            <a id="Home" href="Index.html"><img id="Logo2" src="PiggyBank.png"></a>
+        </li>
+        <liclass="Top2"><a id="PigText" href="Index.html">PiggyBank</a></li>
+    </ul><br>
+
+    <button class="SaveData" id="HomeButton"><a  href="Index.html">Go to site home</a></button><br><br>
+
+
+    <div class="About" id="Login">
+        <h2 class="Abouthead">Login</h2>
+        <form id="IncomeForm">
+            <input type="text" class="As" id="source1" name="IncomeSource" placeholder="Registered email" required><br><br>
+            <input type="password" class="As" id="source2" name="IncomeSource" placeholder="Password" required><br><br>
+            <button class="SaveData">Login</button>
+        </form><br> Don't have an account? <a id="CreateOne" href="#Signup">Create one</a>
+    </div><br><br>
+
+    <div class="About">
+        <h2 class="Abouthead">Sign up</h2>
+        <form id="IncomeForm">
+            <input type="text" class="As" id="source3" name="IncomeSource" placeholder="Name" required><br><br>
+            <input type="text" class="As" id="source4" name="IncomeSource" placeholder="Email address" required><br><br>
+            <input type="password" class="As" id="source5" name="IncomeSource" placeholder="Password" required><br><br>
+            <button class="SaveData" id="Signup">Sign up</button>
+        </form><br> Already have an account? <a id="CreateOne" href="#Home">Login here</a>
+    </div><br><br>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('IncomeForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                var username = document.getElementById('source1').value;
+                var password = document.getElementById('source2').value;
+
+                // Hardcoded username and password
+                var hardcodedUsername = "tt";
+                var hardcodedPassword = "12";
+
+                // Check if the entered username and password match the hardcoded values
+                if (username === hardcodedUsername && password === hardcodedPassword) {
+                    // Redirect to dashboard or do something else after successful login
+                    alert('Login successful! Redirecting to dashboard...');
+                    window.location.href = "Dashboard.html"; // Redirect to dashboard page
+                } else {
+                    // If username or password is incorrect, show an error message
+                    alert('Incorrect username or password. Please try again.');
+                }
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

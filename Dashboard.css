@@ -1,0 +1,235 @@
+* {
+    color: rgb(161, 61, 255);
+    font-family: Montserrat, sans-serif;
+
+    body {
+        background-image: linear-gradient(rgb(52, 0, 100), blueviolet, blueviolet);
+    }
+    
+
+    #PigText {
+        font-family: Montserrat ExtraBold;
+        font-size: 32px;
+        color: white;
+    }
+
+    .Top2 {
+        float: left;
+    }
+      
+    .Top2 a {
+        display: block;
+        color: blueviolet;
+        text-align: center;
+        font-family: Montserrat SemiBold;
+        padding: 0px 0px;
+        text-decoration: none;
+    }
+
+    #Nav {
+        list-style-type: none;
+        margin: 20px;
+        width: calc(100% - 60px);
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        border-radius: 50px;
+        background-color: white;
+        box-shadow: 0px 0px 10px 5px rgb(94, 0, 182);
+    }
+      
+    .Nav2 {
+        float: left;
+    }
+      
+    .Nav2 a {
+        display: block;
+        color: blueviolet;
+        text-align: center;
+        font-family: Montserrat SemiBold;
+        padding: 5px 16px;
+        text-decoration: none;
+    }
+      
+    .Nav2 a:hover {
+        background-image: linear-gradient(blueviolet, rgb(52, 0, 100), blueviolet);
+        border-radius: 50px;
+        color: white;
+    }
+
+    #Dashboard {
+        background-image: linear-gradient(blueviolet, blueviolet, blueviolet);
+          border-radius: 50px;
+          color: white;
+    }
+
+    #Logo2 {
+        width: 50px;
+    }
+
+    #Head1 {
+        color: white;
+        font-family: Montserrat ExtraBold;
+        font-size: 60px;
+        margin: 20px;
+    }
+
+    .InOut {
+        display: flex;
+    }
+
+    .OverBox {
+        background-color: white;
+        border: none;
+        padding: 20px 15px;
+        width: 100%;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 30px;
+        text-align: left;
+        box-shadow: 0px 0px 5px 5px rgb(94, 0, 182);
+        width: 500px;
+        margin: 20px;
+    }
+
+    .InOut {
+        width: calc(100% - 10px)
+    }
+
+    .OverBox:hover {
+        background-image: linear-gradient(white, white, rgb(233, 209, 255));
+        color: white;
+        padding: 25px 15px;
+
+        transition: padding 0.2s;
+    }
+
+    .OverBox:not(:hover) {
+        background-image: linear-gradient(white, white, white);
+        color: white;
+        padding: 20px 15px;
+
+        transition: padding 0.2s;
+    }
+
+    #OverviewBox1 {
+        width: calc(100% - 80px);
+    }
+
+    #OverBox2 {
+        padding: 40px 15px;
+        font-size: 72px;
+    }
+
+    .Bal1 {
+        font-family: Montserrat ExtraBold;
+        font-size: 40px;
+        color:rgb(52, 0, 100);
+    }
+
+    .Head1 {
+        font-family: Montserrat ExtraBold;
+        color: grey;
+    }
+
+    .LineSpace {
+        margin-right: 20px;
+      }
+
+    .IncomeButton {
+        background-color: blueviolet;
+        color: white;
+        padding: 3px 15px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-style: bold;
+        font-family: Montserrat ExtraBold;
+        border-radius: 50px;
+      }
+
+    .IncomeButton:hover {
+        background-image: linear-gradient(blueviolet, rgb(52, 0, 100), blueviolet);
+        color: white;
+    }
+
+    #OverIncome {
+        flex: 1;
+    }
+
+    #OverExpenses {
+        flex: 1;
+    }
+
+    #OverIncome:hover{
+        background-image: linear-gradient(white, white, rgb(188, 255, 188));
+        color: green;
+    }
+    
+    #OverExpenses:hover{
+        background-image: linear-gradient(white, white, rgb(255, 188, 188));
+        color: red;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+      }
+      
+      .tooltip .tooltiptext {
+        top: 100%;
+        left: 50%;
+        margin-left: -60px;
+        visibility: hidden;
+        opacity: 0;
+        width: 450px;
+        height: 20px;
+        background-color: rgba(221, 221, 221, 0.568);
+        color: rgb(52, 0, 100);
+        text-align: center;
+        border-radius: 10px;
+        padding: 5px 0;
+        backdrop-filter: blur(5px);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.534);
+        transition: visibility 0.3s, opacity 0.3s;
+      
+        position: absolute;
+        z-index: 1;
+      }
+      
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      #finnacialSummary {
+        font-size: 72px;
+        font-family: Montserrat ExtraBold;
+        color: rgb(52, 0, 100);
+      }
+      
+      #displayIncomeSummary {
+        font-size: 40px;
+        padding: 0px 0px 0px 10px;
+        font-family: Montserrat ExtraBold;
+        color: rgb(52, 0, 100);
+      }
+
+      #displayExpenseSummary {
+        font-size: 40px;
+        font-family: Montserrat ExtraBold;
+        color: rgb(52, 0, 100);
+      }
+
+
+    
+
+
+
+
+
+
+
+
+}

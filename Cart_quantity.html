@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart qunatity</title>
+  </head>
+  <style>
+    .AddIncome1 {
+      background-color: white;
+      color: rgb(52, 0, 100);
+      padding: 10px 15px;
+      margin: 20px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-style: bold;
+      font-family: Montserrat ExtraBold;
+      border-radius: 50px;
+      width: 200px;
+      animation-name: Anim1;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    .AddIncome1:hover {
+      background-color: rgb(52, 0, 100);
+      color: white;
+      box-shadow: 0px 0px 0px 3px white;
+    }
+  </style>
+
+  <body>
+    <button
+      class="AddIncome1"
+      onclick="
+        console.log(`Cart Quantity: ${cartQuantity}`);
+        "
+    >
+      Show Quantity
+    </button>
+
+    <button
+      class="AddIncome1"
+      onclick="
+        cartQuantity = cartQuantity + 1;
+        console.log(`Cart Quantity: ${cartQuantity}`)
+    "
+    >
+      Add cart
+    </button>
+
+    <button
+      class="AddIncome1"
+      onclick="
+         cartQuantity = cartQuantity + 2;
+        console.log(`Cart Quantity: ${cartQuantity}`)
+    "
+    >
+      +2
+    </button>
+    <button
+      class="AddIncome1"
+      onclick="
+         cartQuantity = cartQuantity + 3;
+        console.log(`Cart Quantity: ${cartQuantity}`)
+    
+    "
+    >
+      +3
+    </button>
+    <button
+      class="AddIncome1"
+      onclick="
+         cartQuantity = 0;
+        console.log(`Cart Quantity: ${cartQuantity}`)
+    "
+    >
+      Reset Cart
+    </button>
+
+    <script>
+      let cartQuantity = 0;
+    </script>
+  </body>
+</html>
